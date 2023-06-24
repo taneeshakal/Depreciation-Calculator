@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head><title>Calculate Depreciation  | PUB</title>
+     <link rel="stylesheet" type="text/css" href="acc.css">
+	 <link rel="icon" href="icon.ico">
+	 <script type="text/javascript" language="javascript">
+	     
+		 function calculate_stdepre(){
+		     var cost=document.getElementById("cost").value;
+			 var scrap=document.getElementById("scrap").value;
+			 var Tunits=document.getElementById("Tunits").value;
+			 var Cunits=document.getElementById("Cunits").value;
+			 var accumulated_depre=document.getElementById("accumulated_depre").value;
+			 
+			 var calculated_depre1;
+			 var calculated_depre2;
+			 var calculated_depre3;
+			 var carrying_value;
+			 
+			 calculated_depre1=cost-scrap;
+			 calculated_depre2=Cunits/Tunits;
+			 calculated_depre3=calculated_depre1*calculated_depre2;
+			 carrying_value=(cost-accumulated_depre)-calculated_depre3;
+			 
+			 var output_value= calculated_depre3; 
+                 
+ 
+			 
+			 document.getElementById("calculated_depre3").innerHTML = "Depreciation = " +calculated_depre3;
+			document.getElementById("carrying_value").innerHTML = "Carrying value = " +carrying_value;
+		 }
+		 
+		 
+	 
+	 
+	 
+	 
+	 </script>
+</head>
+
+<body style="margin:50px 100px;">
+     <div class="bo">
+     
+     <h1 class="heading">Depreciation from Production Unit Basis (PUB)</h1></br></br>
+	 
+	 <form name="myForm" method="post">
+	      
+		 <input type="text" placeholder="Enter the Cost" name="cost" id="cost"> &emsp;
+		 
+         <input type="text" placeholder="Enter the Scrap Value" name="scrap" id="scrap"> </br></br></br>
+		 
+		 <input type="text" placeholder="Enter the Total number of Units" name="Tunits" id="Tunits">&emsp; &emsp;
+		 
+		 <input type="text" placeholder="Enter the production unit for this year" name="Cunits" id="Cunits"> </br></br></br> 
+		 
+		 <input type="text" placeholder="Enter the Accumulated Depreciation So Far" name="accumulated_depre" id="accumulated_depre"> </br></br></br>
+		 
+		 <div><input id="clickMe" type="button" value="Calculate" onclick="calculate_stdepre()" />
+		 &emsp;
+		 <input  id="clickMe" value="Refresh" type="button" onClick="window.location.reload();" /></div>
+		 </br></br>
+		 
+		 
+		<center>
+		 <p style="font-size:50px; color:red;" id="calculated_depre3"></p>
+		 <p style="font-size:50px;color:red;" id="carrying_value"></p></center>
+		  
+		 
+	 
+	 </form>
+	 </div>
+	 <center>
+	<a href="Home.html">
+		<img src="homebutton.png">
+	</a>
+	</center>
+</body>
+</html>

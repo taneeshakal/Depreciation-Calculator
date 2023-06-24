@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head><title>Calculate Depreciation  | RBB</title>
+     <link rel="stylesheet" type="text/css" href="acc.css">
+	 <link rel="icon" href="icon.ico">
+	 <script type="text/javascript" language="javascript">
+	     
+		 function calculate_stdepre(){
+		     var cost=document.getElementById("cost").value;
+			 var accumulated_depre=document.getElementById("accumulated_depre").value;
+			 var rate=document.getElementById("rate").value;
+			 
+			 var calculated_depre;
+			 var carrying_value;
+			
+			 
+			 calculated_depre=((cost-accumulated_depre)*rate)/100;
+			 carrying_value=(cost-accumulated_depre)-calculated_depre;
+			 
+			 
+			 document.getElementById("calculated_depre").innerHTML = "Depreciation = " +calculated_depre;
+			 document.getElementById("carrying_value").innerHTML = "Carrying value = " +carrying_value;
+			 
+		 
+		 }
+		 
+		 
+	 
+	 
+	 
+	 
+	 </script>
+</head>
+
+<body>
+     <body style="margin:50px 100px;">
+     <div class="bo">
+     
+     <h1 class="heading">Depreciation From Reducing Balance Basis (RBB)</h1></br></br>
+	 
+	 <form name="myForm" method="post">
+	      
+		 <input type="text" placeholder="Enter the Cost" name="cost" id="cost"> &emsp;
+		 
+         <input type="text" placeholder="Enter the Accumulated Depreciation" name="accumulated_depre" id="accumulated_depre"> </br></br></br>
+		 
+		 <input type="text" placeholder="Enter the Rate (Percentage)" name="rate" id="rate"> </br></br></br>
+		 
+		 
+		 <center><div><input id="clickMe" type="button" value="Calculate" onclick="calculate_stdepre()" class="right"/> &emsp;
+		 <input  id="clickMe" value="Refresh" type="button" onClick="window.location.reload();" class="right"/></div></center></br></br>
+		 
+		 
+		 
+
+		 <center><p style="font-size:50px; color:red; " id="calculated_depre"></p> 
+		 <p style="font-size:50px;color:red;" id="carrying_value"></p></center>
+		 
+	
+	 </form>
+	 <a href="Home.html">
+		<img src="homebutton.png">
+	</a>
+</body>
+</html>
